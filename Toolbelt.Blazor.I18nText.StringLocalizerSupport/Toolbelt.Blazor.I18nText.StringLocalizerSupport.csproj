@@ -1,0 +1,29 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <LangVersion>Latest</LangVersion>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\$(AssemblyName).xml</DocumentationFile>
+    <NoWarn>$(NoWarn);1591</NoWarn>
+    <PackageOutputPath>..\_dist\</PackageOutputPath>
+    <GeneratePackageOnBuild Condition=" '$(Configuration)' == 'Release' ">true</GeneratePackageOnBuild>
+    <Authors>J.Sakamoto</Authors>
+    <Copyright>Copyright © 2019-2020 J.Sakamoto, Mozilla Public License 2.0</Copyright>
+    <Version>1.0.0.0-beta</Version>
+    <PackageLicenseExpression>MPL-2.0</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/jsakamoto/Toolbelt.Blazor.I18nText.StringLocalizerSupport</PackageProjectUrl>
+    <PackageTags>blazor,localize,i18n</PackageTags>
+    <Description>This NuGet package allows you to localize your Blazor app even validation messages based on .NET Core localization infrastructure such as "IStringLocalizer".</Description>
+    <PackageReleaseNotes>v.1.0.0
+- Initial release.</PackageReleaseNotes>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Localization.Abstractions" Version="3.0.0" />
+    <PackageReference Include="Toolbelt.Blazor.I18nText" Version="8.0.0.2-beta" />
+  </ItemGroup>
+
+</Project>

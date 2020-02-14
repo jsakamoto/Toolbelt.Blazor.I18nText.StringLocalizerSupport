@@ -1,0 +1,62 @@
+﻿@using System.Runtime.InteropServices
+@inherits LayoutComponentBase
+@inject NavigationManager NavigationManager
+@inject I18nText I18nText
+
+<div class="sidebar">
+    <NavMenu />
+</div>
+
+<div class="main">
+
+    <div class="content px-4">
+        @Body
+
+        <div class="footer">
+            <div class="form-row align-items-center text-muted px-4">
+                <div class="col">
+                </div>
+                <div class="col-auto">
+                    <span class="oi oi-globe" aria-hidden="true"></span>
+                </div>
+                <div class="col-auto">
+                    <select class="form-control form-control-sm" @onchange="OnChangeCurrentLang">
+                        <option value="en" selected="@(CurrentLang == "en")">English</option>
+                        <option value="ja" selected="@(CurrentLang == "ja")">日本語</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+@code {
+
+    string CurrentLang;
+
+    protected override void OnInitialized()
+    {
+        CurrentLang = CultureInfo.CurrentUICulture.Name.Split('-').First().ToLower();
+        if (!new[] { "en", "ja" }.Contains(CurrentLang)) { CurrentLang = "en"; }
+    }
+
+    // https://github.com/aspnet/AspNetCore.Docs/issues/13436
+
+    async Task OnChangeCurrentLang(ChangeEventArgs args)
+    {
+        var culture = CultureInfo.GetCultureInfo((string)args.Value);
+        if (RuntimeInformation.OSDescription == "web")
+        {
+            CultureInfo.DefaultThreadCurrentCulture = culture;
+            CultureInfo.DefaultThreadCurrentUICulture = culture;
+            await this.I18nText.SetCurrentLanguageAsync(culture.Name);
+        }
+        else
+        {
+            var uri = NavigationManager.ToAbsoluteUri(NavigationManager.Uri).GetComponents(UriComponents.PathAndQuery, UriFormat.Unescaped);
+            var query = $"?culture={Uri.EscapeDataString(culture.Name)}&redirectUri={Uri.EscapeDataString(uri)}";
+            NavigationManager.NavigateTo("/Culture/SetCulture" + query, forceLoad: true);
+        }
+    }
+}

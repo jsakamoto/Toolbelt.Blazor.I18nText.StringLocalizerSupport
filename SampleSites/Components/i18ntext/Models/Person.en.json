@@ -1,0 +1,5 @@
+{
+  "Name": "Name",
+  "Required": "The {0} field is required.",
+  "TooLong": "{0} is too long."
+}

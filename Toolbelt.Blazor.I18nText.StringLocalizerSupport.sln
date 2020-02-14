@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29505.145
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Toolbelt.Blazor.I18nText.StringLocalizerSupport", "Toolbelt.Blazor.I18nText.StringLocalizerSupport\Toolbelt.Blazor.I18nText.StringLocalizerSupport.csproj", "{79F0ABD6-1B4C-4355-94EB-3A9E38576F85}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Toolbelt.Blazor.I18nText.StringLocalizerSupport.Test", "Toolbelt.Blazor.I18nText.StringLocalizerSupport.Test\Toolbelt.Blazor.I18nText.StringLocalizerSupport.Test.csproj", "{BAE6B1E3-3424-42B1-A9D9-32B820E296DE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "README", "README", "{F98B454B-4060-4888-B51B-EEA60EDD9E2D}"
+	ProjectSection(SolutionItems) = preProject
+		LICENSE = LICENSE
+		README.md = README.md
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{79F0ABD6-1B4C-4355-94EB-3A9E38576F85}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{79F0ABD6-1B4C-4355-94EB-3A9E38576F85}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{79F0ABD6-1B4C-4355-94EB-3A9E38576F85}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{79F0ABD6-1B4C-4355-94EB-3A9E38576F85}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BAE6B1E3-3424-42B1-A9D9-32B820E296DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BAE6B1E3-3424-42B1-A9D9-32B820E296DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BAE6B1E3-3424-42B1-A9D9-32B820E296DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BAE6B1E3-3424-42B1-A9D9-32B820E296DE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D6BFCA44-8414-4FD8-95D8-B571D04634A9}
+	EndGlobalSection
+EndGlobal

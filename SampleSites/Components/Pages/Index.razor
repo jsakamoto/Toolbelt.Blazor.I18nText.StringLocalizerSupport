@@ -1,0 +1,36 @@
+﻿@page "/"
+@inject IStringLocalizer<Index> Localizer
+
+<div>
+    <EditForm Model="NewPerson" OnValidSubmit="OnSubmit">
+        <LocalizedDataAnnotationsValidator />
+
+        <p>
+            <label for="name">@Localizer["LabelForName"]</label>
+            <InputText id="name" @bind-Value="NewPerson.Name" />
+        </p>
+        <p>
+            <button class="btn btn-primary">@Localizer["DoValidation"]</button>
+        </p>
+
+        <ValidationSummary />
+    </EditForm>
+</div>
+
+<p>
+    <a class="btn btn-primary" href="/about">About</a>
+</p>
+
+@code
+    {
+    private Person NewPerson = new Person();
+
+    protected override async Task OnInitializedAsync()
+    {
+        await this.Localizer.WaitForReadyAsync(this);
+    }
+
+    private void OnSubmit()
+    {
+    }
+}
